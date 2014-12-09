@@ -53,11 +53,7 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.position', 'ui.bootstrap
    * This is a helper function for translating camel-case to snake-case.
    */
   function snake_case(name){
-    var regexp = /[A-Z]/g;
-    var separator = '-';
-    return name.replace(regexp, function(letter, pos) {
-      return (pos ? separator : '') + letter.toLowerCase();
-    });
+    return name.replace(/[A-Z]/g, '_$&').toLowerCase();
   }
 
   /**
